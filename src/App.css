@@ -1,0 +1,136 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* changed from height:100% */
+  background-color: inherit; /* inherit from body */
+}
+
+/* 🌙 Dark Mode: Global */
+.app.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode, html.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+/* 🌙 Dark Mode: Cards */
+.app.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: none;
+}
+.app.dark-mode .card-body,
+.app.dark-mode .card-title,
+.app.dark-mode .card-text {
+  color: #f1f1f1 !important;
+}
+.app.dark-mode .text-muted {
+  color: #ccc !important;
+}
+
+/* 🌙 Dark Mode: Input/Modal */
+.app.dark-mode input {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+.app.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* 🌙 Dark Mode: Header/Footer */
+.app.dark-mode header,
+.app.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Card Hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Hover */
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Modal Fade Animation */
+@keyframes scaleFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.fade-in-modal {
+  animation: scaleFade 0.4s ease-in-out;
+}
+
+/* Floating Toggle */
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+  background: lightblue;
+  color: white;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background-color 0.3s;
+}
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+.app.dark-mode .theme-toggle-btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+.app.dark-mode .theme-toggle-btn:hover {
+  background-color: #444;
+}
+
+/* Header & Footer Transitions */
+header, footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
